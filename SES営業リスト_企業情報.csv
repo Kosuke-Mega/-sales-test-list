@@ -1,0 +1,26 @@
+﻿エリア,企業名,業種,所在地,求められるスキル,想定単価,案件特性,アプローチポイント,ウェブサイト,インボイス番号
+関東,株式会社テックイノベーション,IT/テクノロジー,渋谷区,"React, TypeScript, AWS",80-100万円,新規サービス開発,最新技術スタックの提案、専門性の高いエンジニア,https://www.tech-innovation.co.jp,T1234567890123
+関東,フィンテックソリューション株式会社,金融/フィンテック,千代田区,"Java, Spring Boot, Kubernetes",90-110万円,決済システム開発,金融系開発実績、セキュリティ対応力,https://www.fintech-solutions.jp,T2345678901234
+関東,グローバルコマース株式会社,EC/小売,品川区,"Vue.js, Node.js, AWS",75-95万円,ECサイト改修・機能追加,EC開発実績、大規模トラフィック対応経験,https://www.global-commerce.co.jp,T3456789012345
+関東,デジタルメディア株式会社,メディア/広告,新宿区,"React, GraphQL, GCP",70-90万円,メディアプラットフォーム開発,高パフォーマンス実装、SEO対応経験,https://www.digital-media.co.jp,T4567890123456
+関東,グローバルテクノロジー株式会社,外資系IT,港区,"React, Python, AWS, 英語力",90-120万円,グローバルサービス開発,英語対応可能エンジニア、グローバル開発経験,https://www.global-technology.co.jp,T5678901234567
+関西,関西製造システム株式会社,製造業,大阪市北区,"Java, .NET, Oracle",65-80万円,生産管理システム改修,製造業務知識、長期安定的な支援体制,https://www.kansai-manufacturing.co.jp,K1234567890123
+関西,ウエストリテール株式会社,小売/流通,大阪市中央区,"PHP, JavaScript, AWS",60-75万円,店舗管理システム開発,小売業務知識、モバイル対応経験,https://www.west-retail.co.jp,K2345678901234
+関西,メディカルケアシステム株式会社,医療/ヘルスケア,神戸市中央区,"Java, .NET, SQL Server",65-85万円,医療情報システム開発,医療系システム開発経験、セキュリティ対応,https://www.medical-care-systems.co.jp,K3456789012345
+関西,関西教育ソリューション株式会社,教育,京都市下京区,"PHP, React, MySQL",55-70万円,学習管理システム開発,教育系システム開発経験、UI/UX設計力,https://www.kansai-education.co.jp,K4567890123456
+関西,フードテックソリューション株式会社,食品,大阪市淀川区,"Java, JavaScript, Oracle",60-75万円,食品管理システム開発,食品業界知識、トレーサビリティ対応経験,https://www.food-tech-solutions.co.jp,K5678901234567
+中部,中部自動車システム株式会社,自動車/部品,豊田市,"C#, .NET, SQL Server",60-75万円,部品管理システム開発,自動車業界知識、品質管理経験,https://www.chubu-automotive.co.jp,C1234567890123
+中部,名古屋機械システム株式会社,機械製造,名古屋市中区,"Java, PL/SQL, Oracle",55-70万円,生産管理システム開発,製造業知識、ERP連携経験,https://www.nagoya-machinery.co.jp,C2345678901234
+中部,中部エレクトロニクス株式会社,電子機器,浜松市,"C++, C#, MySQL",60-75万円,検査システム開発,組込み開発経験、品質管理知識,https://www.chubu-electronics.co.jp,C3456789012345
+中部,エアロスペーステクノロジー株式会社,航空/宇宙,名古屋市港区,"Java, Python, Oracle",65-80万円,設計支援システム開発,高精度計算処理、CAD連携経験,https://www.aerospace-tech.co.jp,C4567890123456
+中部,中部物流システム株式会社,物流,名古屋市中村区,"Java, JavaScript, PostgreSQL",55-70万円,物流管理システム開発,物流業務知識、バーコード/RFID連携経験,https://www.chubu-logistics.co.jp,C5678901234567
+九州,九州ゲームスタジオ株式会社,IT/ゲーム開発,福岡市中央区,"Unity, C#, JavaScript",55-70万円,モバイルゲーム開発,ゲーム開発経験、UI/UX設計力,https://www.kyushu-gamestudio.co.jp,Q1234567890123
+九州,九州ツーリズムシステム株式会社,観光/サービス,福岡市博多区,"PHP, JavaScript, MySQL",50-65万円,予約管理システム開発,観光業知識、モバイル対応経験,https://www.kyushu-tourism.co.jp,Q2345678901234
+九州,九州アグリテック株式会社,食品/農業,熊本市,"Java, Python, PostgreSQL",50-65万円,農業データ分析システム,データ分析経験、センサー連携知識,https://www.kyushu-agritech.co.jp,Q3456789012345
+九州,九州セミコンダクター株式会社,半導体/電子機器,北九州市,"C++, Java, Oracle",55-70万円,製造管理システム開発,製造業知識、品質管理経験,https://www.kyushu-semiconductor.co.jp,Q4567890123456
+九州,九州行政システム株式会社,公共/行政,福岡市東区,"Java, .NET, Oracle",50-65万円,行政システム開発,公共系システム開発経験、セキュリティ対応,https://www.kyushu-government-systems.co.jp,Q5678901234567
+北海道・東北,北海道行政システム株式会社,公共/行政,札幌市中央区,"Java, .NET, Oracle",50-65万円,自治体向けシステム開発,公共系システム開発経験、GIS連携,https://www.hokkaido-government.co.jp,H1234567890123
+北海道・東北,北日本観光システム株式会社,観光/サービス,札幌市北区,"PHP, JavaScript, MySQL",45-60万円,観光情報システム開発,観光業知識、地図連携経験,https://www.north-japan-tourism.co.jp,H2345678901234
+北海道・東北,東北アグリシステム株式会社,農業/水産,仙台市青葉区,"Java, Python, PostgreSQL",45-60万円,農業データ管理システム,農業/水産業知識、IoT連携経験,https://www.tohoku-agri.co.jp,H3456789012345
+北海道・東北,北日本教育ソリューション株式会社,教育,札幌市白石区,"PHP, JavaScript, MySQL",45-60万円,学習管理システム開発,教育系システム開発経験、UI/UX設計力,https://www.north-japan-education.co.jp,H4567890123456
+北海道・東北,東北エネルギーシステム株式会社,エネルギー,仙台市宮城野区,"Java, C#, Oracle",50-65万円,エネルギー管理システム,エネルギー業界知識、データ分析経験,https://www.tohoku-energy.co.jp,H5678901234567

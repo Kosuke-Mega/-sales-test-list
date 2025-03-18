@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本SES市場 - 営業リスト（企業情報付き）</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #4472C4;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        h2 {
+            color: #4472C4;
+            border-bottom: 2px solid #4472C4;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        h3 {
+            color: #5B9BD5;
+            margin-top: 30px;
+        }
+        .region-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .region-tab {
+            padding: 10px 20px;
+            background-color: #e0e0e0;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+            font-weight: bold;
+        }
+        .region-tab.active {
+            background-color: #4472C4;
+            color: white;
+        }
+        .region-content {
+            display: none;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .region-content.active {
+            display: block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #8EA9DB;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .overview-item {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .overview-item h4 {
+            margin-top: 0;
+            color: #4472C4;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .overview-item ul {
+            padding-left: 20px;
+        }
+        .trends-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+        .trends-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .trend-item {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #4472C4;
+        }
+        .trend-item h4 {
+            margin-top: 0;
+            color: #4472C4;
+        }
+        .skill-level-section {
+            margin-top: 30px;
+        }
+        .note {
+            background-color: #fffde7;
+            padding: 10px 15px;
+            border-left: 4px solid #ffd600;
+            margin: 20px 0;
+        }
+        @media (max-width: 768px) {
+            .overview-grid, .trends-grid {
+                grid-template-columns: 1fr;
+            }
+            .region-tab {
+                margin-bottom: 5px;
+            }
+            table {
+                font-size: 14px;
+            }
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>日本SES市場 - エリア別営業リスト（企業情報付き）</h1>
+            <p>WEBアプリケーション開発SES営業のための市場分析と営業戦略</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="note">
+            <strong>注意:</strong> このリストに掲載されている企業情報（企業名、ウェブサイト、インボイス番号など）はサンプルであり、実在の企業とは関係ありません。実際の営業活動では、正確な企業情報を調査してください。
+        </div>
+        
+        <div class="region-tabs">
+            <div class="region-tab active" onclick="showRegion('kanto')">関東エリア</div>
+            <div class="region-tab" onclick="showRegion('kansai')">関西エリア</div>
+            <div class="region-tab" onclick="showRegion('chubu')">中部エリア</div>
+            <div class="region-tab" onclick="showRegion('kyushu')">九州エリア</div>
+            <div class="region-tab" onclick="showRegion('hokkaido')">北海道・東北エリア</div>
+            <div class="region-tab" onclick="showRegion('trends')">市場動向</div>
+        </div>
+
+        <!-- 関東エリア -->
+        <div id="kanto" class="region-content active">
+            <h2>関東エリア営業戦略</h2>
+            
+            <div class="overview-grid">
+                <div class="overview-item">
+                    <h4>主要ターゲット業種</h4>
+                    <ul>
+                        <li>IT/テクノロジー企業</li>
+                        <li>金融（銀行、証券、保険、フィンテック）</li>
+                        <li>EC/小売</li>
+                        <li>メディア/広告</li>
+                        <li>外資系企業</li>
+                    </ul>
+                </div>
+                <div class="overview-item">
+                    <h4>注目エリア</h4>
+                    <ul>
+                        <li>渋谷、新宿、六本木（スタートアップ・IT企業）</li>
+                        <li>丸の内、大手町（金融・大企業）</li>
+                        <li>品川、五反田（IT・メディア）</li>
+                        <li>横浜みなとみらい（大企業の開発拠点）</li>
+                    </ul>
+                </div>
+                <div class="overview-item">
+                    <h4>求められる主要スキル</h4>
+                    <ul>
+                        <li>フロントエンド: React/Next.js, Vue.js/Nuxt.js, TypeScript</li>
+                        <li>バックエンド: Java, Python, Go, Node.js, Ruby (Rails)</li>
+                        <li>クラウド: AWS, GCP, Azure</li>
+                        <li>インフラ: Docker, Kubernetes, CI/CD</li>
+                    </ul>
+                </div>
+                <div class="overview-item">
+                    <h4>単価水準・市場特性</h4>
+                    <ul>
+                        <li>エンジニア中級〜上級: 70万円〜100万円/月</li>
+                        <li>短期〜中期の集中開発案件が多い</li>
+                        <li>技術スタックの最新化を重視する傾向</li>
+                        <li>コスト意識と技術レベルのバランスを重視</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>ターゲット企業リスト</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>企業名</th>
+                        <th>業種</th>
+                        <th>所在地</th>
+                        <th>求められるスキル</th>
+                        <th>想定単価</th>
+                        <th>案件特性</th>
+                        <th>アプローチポイント</th>
+                        <th>ウェブサイト</th>
+                        <th>インボイス番号</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>株式会社テックイノベーション</td>
+                        <td>IT/テクノロジー</td>
+                        <td>渋谷区</td>
+                        <td>React, TypeScript, AWS</td>
+                        <td>80-100万円</td>
+                        <td>新規サービス開発</td>
+                        <td>最新技術スタックの提案、専門性の高いエンジニア</td>
+                        <td><a href="https://www.tech-innovation.co.jp" target="_blank">公式サイト</a></td>
+                        <td>T1234567890123</td>
+                    </tr>
+                    <tr>
+                        <td>フィンテックソリューション株式会社</td>
+                        <td>金融/フィンテック</td>
+                        <td>千代田区</td>
+                        <td>Java, Spring Boot, Kubernetes</td>
+                        <td>90-110万円</td>
+                        <td>決済システム開発</td>
+                        <td>金融系開発実績、セキュリティ対応力</td>
+                        <td><a href="https://www.fintech-solutions.jp" target="_blank">公式サイト</a></td>
+                        <td>T2345678901234</td>
+                    </tr>
+                    <tr>
+                        <td>グローバルコマース株式会社</td>
+                        <td>EC/小売</td>
+                        <td>品川区</td>
+                        <td>Vue.js, Node.js, AWS</td>
+                        <td>75-95万円</td>
+                        <td>ECサイト改修・機能追加</td>
+                        <td>EC開発実績、大規模トラフィック対応経験</td>
+                        <td><a href="https://www.global-commerce.co.jp" target="_blank">公式サイト</a></td>
+                        <td>T3456789012345</td>
+                    </tr>
+                    <tr>
+                        <td>デジタルメディア株式会社</td>
+                        <td>メディア/広告</td>
+                        <td>新宿区</td>
+                        <td>React, GraphQL, GCP</td>
+                        <td>70-90万円</td>
+                        <td>メディアプラットフォーム開発</td>
+                        <td>高パフォーマンス実装、SEO対応経験</td>
+                        <td><a href="https://www.digital-media.co.jp" target="_blank">公式サイト</a></td>
+                        <td>T4567890123456</td>
+                    </tr>
+                    <tr>
+                        <td>グローバルテクノロジー株式会社</td>
+                        <td>外資系IT</td>
+                        <td>港区</td>
+                        <td>React, Python, AWS, 英語力</td>
+                        <td>90-120万円</td>
+                        <td>グローバルサービス開発</td>
+                        <td>英語対応可能エンジニア、グローバル開発経験</td>
+                        <td><a href="https://www.global-technology.co.jp" target="_blank">公式サイト</a></td>
+                        <td>T5678901234567</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="skill-level-section">
+                <h3>スキルレベル別単価目安</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>レベル</th>
+                            <th>経験年数</th>
+                            <th>スキル要件</th>
+                            <th>市場需要</th>
+                            <th>平均単価</th>
+                            <th>案件特性</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>初級</td>
+                            <td>0～2年</td>
+                            <td>基本的なプログラミング言語の理解、開発環境の基本操作</td>
+                            <td>中～低</td>
+                            <td>40万円～55万円/月</td>
+                            <td>保守・運用中心、チーム開発での補助的役割</td>
+                        </tr>
+                        <tr>
+                            <td>中級</td>
+                            <td>3～5年</td>
+                            <td>1～2種類の言語・フレームワークに関する実務経験、要件に基づいて自力で実装可能</td>
+                            <td>高</td>
+                            <td>55万円～75万円/月</td>
+                            <td>機能実装中心、小規模チームでの中核メンバー</td>
+                        </tr>
+                        <tr>
+                            <td>上級</td>
+                            <td>5～8年</td>
+                            <td>複数の言語・フレームワークの深い知識と経験、システム設計可能</td>
+                            <td>高</td>
+                            <td>70万円～90万円/月</td>
+                            <td>中規模開発の中核メンバー、技術選定への関与</td>
+                        </tr>
+                        <tr>
+                            <td>エキスパート</td>
+                            <td>8年以上</td>
+                            <td>特定の技術領域における深い専門性、アーキテクチャ設計能力</td>
+                            <td>高</td>
+                            <td>85万円～120万円/月</td>
+                            <td>アーキテクト／テックリード、技術コンサルティング</td>
+                        </tr>
+                        <tr>
+                            <td>PM</td>
+                            <td>10年前後以上</td>
+                            <td>プロジェクト管理の知識と経験、リスク管理能力、チームマネジメント経験</td>
+                            <td>高</td>
+                            <td>100万円～150万円/月</td>
+                            <td>中～大規模プロジェクト管理、複数チームのマネジメント</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 関西エリア -->
+        <div id="kansai" class="region-content">
+            <h2>関西エリア営業戦略</h2>
+            
+            <div class="overview-grid">
+                <div class="overview-item">
+                    <h4>主要ターゲット業種</h4>
+                    <ul>
+                        <li>製造業</li>
+                        <li>小売/流通</li>
+                        <li>医療/ヘルスケア</li>
+                        <li>教育</li>
+                        <li>食品</li>
+                    </ul>
+                </div>
+                <div class="overview-item">
+                    <h4>注目エリア</h4>
+                    <ul>
+                        <li>大阪梅田・中之島（IT・サービス）</li>
+                        <li>大阪本町（金融・サービス）</li>
+                        <li>京都（研究開発・教育）</li>
+                        <li>神戸（医療・港湾物流）</li>
+                    </ul>
+                </div>
+                <div class="overview-item">
+                    <h4>求められる主要スキル</h4>
+                    <ul>
+                        <li>フロントエンド: JavaScript, jQuery, React, Vue.js</li>
+                        <li>バックエンド: Java, PHP, .NET, C#</li>
+                        <li>クラウド: AWS, Azure</li>
+                        <li>DB: Oracle, SQL Server, MySQL</li>
+                    </ul>
+                </div>
+                <div class="overview-item">
+                    <h4>単価水準・市場特性</h4>
+                    <ul>
+                        <li>エンジニア中級〜上級: 60万円〜85万円/月</li>
+                        <li>長期的な関係構築を重視する傾向</li>
+                        <li>コスト意識が比較的強い</li>
+                        <li>技術的先進性よりも安定性・保守性を重視する傾向</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>ターゲット企業リスト</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>企業名</th>
+                        <th>業種</th>
+                        <th>所在地</th>
+                        <th>求められるスキル</th>
+                        <th>想定単価</th>
+                        <th>案件特性</th>
+                        <th>アプローチポイント</th>
+                        <th>ウェブサイト</th>
+                        <th>インボイス番号</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>関西製造システム株式会社</td>
+                        <td>製造業</td>
+                        <td>大阪市北区</td>
+                        <td>Java, .NET, Oracle</td>
+                        <td>65-80万円</td>
+                        <td>生産管理システム改修</td>
+                        <td>製造業務知識、長期安定的な支援体制</td>
+                        <td><a href="https://www.kansai-manufacturing.co.jp" target="_blank">公式サイト</a></td>
+                        <td>K1234567890123</td>
+                    </tr>
+                    <tr>
+                        <td>ウエストリテール株式会社</td>
+                        <td>小売/流通</td>
+                        <td>大阪市中央区</td>
+                        <td>PHP, JavaScript, AWS</td>
+                        <td>60-75万円</td>
+                        <td>店舗管理システム開発</td>
+                        <td>小売業務知識、モバイル対応経験</td>
+                        <td><a href="https://www.west-retail.co.jp" target="_blank">公式サイト</a></td>
+                        <td>K2345678901234</td>
+                    </tr>
+                    <tr>
+                        <td>メディカルケアシステム株式会社</td>
+                        <td>医療/ヘルスケア</td>
+                        <td>神戸市中央区</td>
+                        <td>Java, .NET, SQL Server</td>
+                        <td>65-85万円</td>
+                        <td>医療情報システム開発</td>
+                        <td>医療系システム開発経験、セキュリティ対応</td>
+                        <td><a href="https://www.medical-care-systems.co.jp" target="_blank">公式サイト</a></td>
+                        <td>K3456789012345</td>
+                    </tr>
+                    <tr>
+                        <td>関西教育ソリューション株式会社</td>
+                        <td>教育</td>
+                        <td>京都市下京区</td>
+                        <td>PHP, React, MySQL</td>
+                        <td>55-70万円</td>
+                        <td>学習管理システム開発</td>
+                        <td>教育系システム開発経験、UI/UX設計力</td>
+                        <td><a href="https://www.kansai-education.co.jp" target="_blank">公式サイト</a></td>
+                        <td>K4567890123456</td>
+                    </tr>
+                    <tr>
+                        <td>フードテックソリューション株式会社</td>
+                        <td>食品</td>
+                        <td>大阪市淀川区</td>
+                        <td>Java, JavaScript, Oracle</td>
+                        <td>60-75万円</td>
+                        <td>食品管理システム開発</td>
+                        <td>食品業界知識、トレーサビリティ対応経験</td>
+                        <td><a href="https://www.food-tech-solutions.co.jp" target="_blank">公式サイト</a></td>
+                        <td>K5678901234567</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="skill-level-section">
+                <h3>スキルレベル別単価目安</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>レベル</th>
+                            <th>経験年数</th>
+                            <th>スキル要件</th>
+                            <th>市場需要</th>
+                            <th>平均単価</th>
+                            <th>案件特性</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>初級</td>
+                            <td>0～2年</td>
+                            <td>基本的なプログラミング言語の理解、開発環境の基本操作</td>
+                            <td>中</td>
+                            <td>35万円～50万円/月</td>
+                            <td>保守・運用中心、チーム開発での補助的役割</td>
+                        </tr>
+                        <tr>
+                            <td>中級</td>
+                            <td>3～5年</td>
+                            <td>1～2種類の言語・フレームワークに関する実務経験、要件に基づいて自力で実装可能</td>
+                            <td>高</td>
+                            <td>50万円～65万円/月</td>
+                            <td>機能実装中心、小規模チームでの中核メンバー</td>
+                        </tr>
+                        <tr>
+                            <td>上級</td>
+                            <td>5～8年</td>
+                            <td>複数の言語・フレームワークの深い知識と経験、システム設計可能</td>
+                            <td>中～高</td>
+                            <td>60万円～80万円/月</td>
+                            <td>中規模開発の中核メンバー、技術選定への関与</td>
+                        </tr>
+                        <tr>
+                            <td>エキスパート</td>
+                            <td>8年以上</td>
+                            <td>特定の技術領域における深い専門性、アーキテクチャ設計能力</td>
+                            <td>中</td>
+                            <td>75万円～100万円/月</td>
+                            <td>アーキテクト／テックリード、技術コンサルティング</td>
+                        </tr>
+                        <tr>
+                            <td>PM</td>
+                            <td>10年前後以上</td>
+                            <td>プロジェクト管理の知識と経験、リスク管理能力、チームマネジメント経験</td>
+                            <td>中～高</td>
+                            <td>90万円～120万円/月</td>
+                            <td>中～大規模プロジェクト管理、複数チームのマネジメント</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 中部エリア -->
+        <div id="chubu" class="region-content">
+            <h2>中部エリア営業戦略</h2>
+            
+            <div class="overview-grid">
+                <div class="overview-item">
+                    <h4>主要ターゲット業種</h4>
+                    <ul>
+                        <li>自動車/自動車部品</li>
+                        <li>機械製造</li>
+                        <li>電子機器</li>
+                        <li>航空/宇宙</li>
+                        <li>物流</li>
+                    </ul>
+                </div>
+                <div class="overview-item">
+                    <h4>注目エリア</h4>
+                    <ul>
+                        <li>名古屋駅周辺（IT・サービス）</li>
+                        <li>刈谷/豊田（自動車関連）</li>
+                        <li>浜松（製造業）</li>
+                    </ul>
+                </div>
+                <div class="overview-item">
+                    <h4>求められる主要スキル</h4>
+                    <ul>
+                        <li>フロントエンド: JavaScript, jQuery, React</li>
+                        <li>バックエンド: Java, C#, VB.NET, PHP</li>
+                        <li>クラウド: AWS, Azure</li>
+                        <li>その他: 生産管理システム知識, IoT連携</li>
+                    </ul>
+                </div>
+                <div class="overview-item">
+                    <h4>単価水準・市場特性</h4>
+                    <ul>
+                        <li>エンジニア中級〜上級: 55万円〜80万円/月</li>
+                        <li>品質要求水準が高い</li>
+                        <li>計画的な長期開発が多い</li>
+                        <li>業界固有の知識・経験を重視</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>ターゲット企業リスト</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>企業名</th>
+                        <th>業種</th>
+                        <th>所在地</th>
+                        <th>求められるスキル</th>
+                        <th>想定単価</th>
+                        <th>案件特性</th>
+                        <th>アプローチポイント</th>
+                        <th>ウェブサイト</th>
+                        <th>インボイス番号</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>中部自動車システム株式会社</td>
+                        <td>自動車/部品</td>
+                        <td>豊田市</td>
+                        <td>C#, .NET, SQL Server</td>
+                        <td>60-75万円</td>
+                        <td>部品管理システム開発</td>
+                        <td>自動車業界知識、品質管理経験</td>
+                        <td><a href="https://www.chubu-automotive.co.jp" target="_blank">公式サイト</a></td>
+                        <td>C1234567890123</td>
+                    </tr>
+                    <tr>
+                        <td>名古屋機械システム株式会社</td>
+                        <td>機械製造</td>
+                        <td>名古屋市中区</td>
+                        <td>Java, PL/SQL, Oracle</td>
+                        <td>55-70万円</td>
+                        <td>生産管理システム開発</td>
+                        <td>製造業知識、ERP連携経験</td>
+                        <td><a href="https://www.nagoya-machinery.co.jp" target="_blank">公式サイト</a></td>
+                        <td>C2345678901234</td>
+                    </tr>
+                    <tr>
+                        <td>中部エレクトロニクス株式会社</td>
+                        <td>電子機器</td>
+                        <td>浜松市</td>
+                        <td>C++, C#, MySQL</td>
+                        <td>60-75万円</td>
+                        <td>検査システム開発</td>
+                        <td>組込み開発経験、品質管理知識</td>
+                        <td><a href="https://www.chubu-electronics.co.jp" target="_blank">公式サイト</a></td>
+                        <td>C3456789012345</td>
+                    </tr>
+                    <tr>
+                        <td>エアロスペーステクノロジー株式会社</td>
+                        <td>航空/宇宙</td>
+                        <td>名古屋市港区</td>
+                        <td>Java, Python, Oracle</td>
+                        <td>65-80万円</td>
+                        <td>設計支援システム開発</td>
+                        <td>高精度計算処理、CAD連携経験</td>
+                        <td><a href="https://www.aerospace-tech.co.jp" target="_blank">公式サイト</a></td>
+                        <td>C4567890123456</td>
+                    </tr>
+                    <tr>
+                        <td>中部物流システム株式会社</td>
+                        <td>物流</td>
+                        <td>名古屋市中村区</td>
+                        <td>Java, JavaScript, PostgreSQL</td>
+                        <td>55-70万円</td>
+                        <td>物流管理システム開発</td>
+                        <td>物流業務知識、バーコード/RFID連携経験</td>
+                        <td><a href="https://www.chubu-logistics.co.jp" target="_blank">公式サイト</a></td>
+                        <td>C5678901234567</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="skill-level-section">
+                <h3>スキルレベル別単価目安</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>レベル</th>
+                            <th>経験年数</th>
+                            <th>スキル要件</th>
+                            <th>市場需要</th>
+                            <th>平均単価</th>
+                            <th>案件特性</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>初級</td>
+                            <td>0～2年</td>
+                            <td>基本的なプログラミング言語の理解、開発環境の基本操作</td>
+                            <td>中～高</td>
+                            <td>35万円～45万円/月</td>
+                            <td>保守・運用中心、チーム開発での補助的役割</td>
+                        </tr>
+                        <tr>
+                            <td>中級</td>
+                            <td>3～5年</td>
+                            <td>1～2種類の言語・フレームワークに関する実務経験、要件に基づいて自力で実装可能</td>
+                            <td>高</td>
+                            <td>45万円～60万円/月</td>
+                            <td>機能実装中心、小規模チームでの中核メンバー</td>
+                        </tr>
+                        <tr>
+                            <td>上級</td>
+                            <td>5～8年</td>
+                            <td>複数の言語・フレームワークの深い知識と経験、システム設計可能</td>
+                            <td>中～高</td>
+                            <td>55万円～75万円/月</td>
+                            <td>中規模開発の中核メンバー、技術選定への関与</td>
+                        </tr>
+                        <tr>
+                            <td>エキスパート</td>
+                            <td>8年以上</td>
+                            <td>特定の技術領域における深い専門性、アーキテクチャ設計能力</td>
+                            <td>中</td>
+                            <td>70万円～95万円/月</td>
+                            <td>アーキテクト／テックリード、技術コンサルティング</td>
+                        </tr>
+                        <tr>
+                            <td>PM</td>
+                            <td>10年前後以上</td>
+                            <td>プロジェクト管理の知識と経験、リスク管理能力、チームマネジメント経験</td>
+                            <td>中～高</td>
+                            <td>85万円～115万円/月</td>
+                            <td>中～大規模プロジェクト管理、複数チームのマネジメント</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 九州エリア -->
+        <div id="kyushu" class="region-content">
+            <h2>九州エリア営業戦略</h2>
+            
+            <div class="overview-grid">
+                <div class="overview-item">
+                    <h4>主要ターゲット業種</h4>
+                    <ul>
+                        <li>IT/ゲーム開発</li>
+                        <li>観光/サービス</li>
+                        <li>食品/農業</li>
+                        <li>半導体/電子機器</li>
+                        <li>公共/行政</li>
+                    </ul>
+                </div>
+                <div class="overview-item">
+                    <h4>注目エリア</h4>
+                    <ul>
+                        <li>福岡天神・博多（IT・サービス）</li>
+                        <li>北九州（製造業）</li>
+                        <li>熊本（半導体関連）</li>
+                    </ul>
+                </div>
+                <div class="overview-item">
+                    <h4>求められる主要スキル</h4>
+                    <ul>
+                        <li>フロントエンド: JavaScript, React, Vue.js</li>
+                        <li>バックエンド: PHP, Ruby, Java, Python</li>
+                        <li>クラウド: AWS</li>
+                        <li>モバイル: iOS, Android, React Native</li>
+                    </ul>
+                </div>
+                <div class="overview-item">
+                    <h4>単価水準・市場特性</h4>
+                    <ul>
+                        <li>エンジニア中級〜上級: 50万円〜75万円/月</li>
+                        <li>地域貢献意識が強い傾向</li>
+                        <li>スピード感を重視</li>
+                        <li>コスト意識が強い</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>ターゲット企業リスト</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>企業名</th>
+                        <th>業種</th>
+                        <th>所在地</th>
+                        <th>求められるスキル</th>
+                        <th>想定単価</th>
+                        <th>案件特性</th>
+                        <th>アプローチポイント</th>
+                        <th>ウェブサイト</th>
+                        <th>インボイス番号</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>九州ゲームスタジオ株式会社</td>
+                        <td>IT/ゲーム開発</td>
+                        <td>福岡市中央区</td>
+                        <td>Unity, C#, JavaScript</td>
+                        <td>55-70万円</td>
+                        <td>モバイルゲーム開発</td>
+                        <td>ゲーム開発経験、UI/UX設計力</td>
+                        <td><a href="https://www.kyushu-gamestudio.co.jp" target="_blank">公式サイト</a></td>
+                        <td>Q1234567890123</td>
+                    </tr>
+                    <tr>
+                        <td>九州ツーリズムシステム株式会社</td>
+                        <td>観光/サービス</td>
+                        <td>福岡市博多区</td>
+                        <td>PHP, JavaScript, MySQL</td>
+                        <td>50-65万円</td>
+                        <td>予約管理システム開発</td>
+                        <td>観光業知識、モバイル対応経験</td>
+                        <td><a href="https://www.kyushu-tourism.co.jp" target="_blank">公式サイト</a></td>
+                        <td>Q2345678901234</td>
+                    </tr>
+                    <tr>
+                        <td>九州アグリテック株式会社</td>
+                        <td>食品/農業</td>
+                        <td>熊本市</td>
+                        <td>Java, Python, PostgreSQL</td>
+                        <td>50-65万円</td>
+                        <td>農業データ分析システム</td>
+                        <td>データ分析経験、センサー連携知識</td>
+                        <td><a href="https://www.kyushu-agritech.co.jp" target="_blank">公式サイト</a></td>
+                        <td>Q3456789012345</td>
+                    </tr>
+                    <tr>
+                        <td>九州セミコンダクター株式会社</td>
+                        <td>半導体/電子機器</td>
+                        <td>北九州市</td>
+                        <td>C++, Java, Oracle</td>
+                        <td>55-70万円</td>
+                        <td>製造管理システム開発</td>
+                        <td>製造業知識、品質管理経験</td>
+                        <td><a href="https://www.kyushu-semiconductor.co.jp" target="_blank">公式サイト</a></td>
+                        <td>Q4567890123456</td>
+                    </tr>
+                    <tr>
+                        <td>九州行政システム株式会社</td>
+                        <td>公共/行政</td>
+                        <td>福岡市東区</td>
+                        <td>Java, .NET, Oracle</td>
+                        <td>50-65万円</td>
+                        <td>行政システム開発</td>
+                        <td>公共系システム開発経験、セキュリティ対応</td>
+                        <td><a href="https://www.kyushu-government-systems.co.jp" target="_blank">公式サイト</a></td>
+                        <td>Q5678901234567</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="skill-level-section">
+                <h3>スキルレベル別単価目安</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>レベル</th>
+                            <th>経験年数</th>
+                            <th>スキル要件</th>
+                            <th>市場需要</th>
+                            <th>平均単価</th>
+                            <th>案件特性</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>初級</td>
+                            <td>0～2年</td>
+                            <td>基本的なプログラミング言語の理解、開発環境の基本操作</td>
+                            <td>高</td>
+                            <td>30万円～40万円/月</td>
+                            <td>保守・運用中心、チーム開発での補助的役割</td>
+                        </tr>
+                        <tr>
+                            <td>中級</td>
+                            <td>3～5年</td>
+                            <td>1～2種類の言語・フレームワークに関する実務経験、要件に基づいて自力で実装可能</td>
+                            <td>高</td>
+                            <td>40万円～55万円/月</td>
+                            <td>機能実装中心、小規模チームでの中核メンバー</td>
+                        </tr>
+                        <tr>
+                            <td>上級</td>
+                            <td>5～8年</td>
+                            <td>複数の言語・フレームワークの深い知識と経験、システム設計可能</td>
+                            <td>中</td>
+                            <td>50万円～70万円/月</td>
+                            <td>中規模開発の中核メンバー、技術選定への関与</td>
+                        </tr>
+                        <tr>
+                            <td>エキスパート</td>
+                            <td>8年以上</td>
+                            <td>特定の技術領域における深い専門性、アーキテクチャ設計能力</td>
+                            <td>低～中</td>
+                            <td>65万円～90万円/月</td>
+                            <td>アーキテクト／テックリード、技術コンサルティング</td>
+                        </tr>
+                        <tr>
+                            <td>PM</td>
+                            <td>10年前後以上</td>
+                            <td>プロジェクト管理の知識と経験、リスク管理能力、チームマネジメント経験</td>
+                            <td>中</td>
+                            <td>80万円～110万円/月</td>
+                            <td>中～大規模プロジェクト管理、複数チームのマネジメント</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 北海道・東北エリア -->
+        <div id="hokkaido" class="region-content">
+            <h2>北海道・東北エリア営業戦略</h2>
+            
+            <div class="overview-grid">
+                <div class="overview-item">
+                    <h4>主要ターゲット業種</h4>
+                    <ul>
+                        <li>公共/行政</li>
+                        <li>観光/サービス</li>
+                        <li>農業/水産</li>
+                        <li>教育</li>
+                        <li>エネルギー</li>
+                    </ul>
+                </div>
+                <div class="overview-item">
+                    <h4>注目エリア</h4>
+                    <ul>
+                        <li>札幌中心部（IT・サービス）</li>
+                        <li>仙台中心部（IT・サービス）</li>
+                        <li>各県庁所在地（公共系）</li>
+                    </ul>
+                </div>
+                <div class="overview-item">
+                    <h4>求められる主要スキル</h4>
+                    <ul>
+                        <li>フロントエンド: JavaScript, jQuery, React</li>
+                        <li>バックエンド: Java, PHP, .NET</li>
+                        <li>クラウド: AWS, Azure</li>
+                        <li>その他: GIS（地理情報システム）</li>
+                    </ul>
+                </div>
+                <div class="overview-item">
+                    <h4>単価水準・市場特性</h4>
+                    <ul>
+                        <li>エンジニア中級〜上級: 45万円〜70万円/月</li>
+                        <li>地域課題解決への意識が高い</li>
+                        <li>長期的な関係性を重視</li>
+                        <li>地域ネットワークの活用</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>ターゲット企業リスト</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>企業名</th>
+                        <th>業種</th>
+                        <th>所在地</th>
+                        <th>求められるスキル</th>
+                        <th>想定単価</th>
+                        <th>案件特性</th>
+                        <th>アプローチポイント</th>
+                        <th>ウェブサイト</th>
+                        <th>インボイス番号</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>北海道行政システム株式会社</td>
+                        <td>公共/行政</td>
+                        <td>札幌市中央区</td>
+                        <td>Java, .NET, Oracle</td>
+                        <td>50-65万円</td>
+                        <td>自治体向けシステム開発</td>
+                        <td>公共系システム開発経験、GIS連携</td>
+                        <td><a href="https://www.hokkaido-government.co.jp" target="_blank">公式サイト</a></td>
+                        <td>H1234567890123</td>
+                    </tr>
+                    <tr>
+                        <td>北日本観光システム株式会社</td>
+                        <td>観光/サービス</td>
+                        <td>札幌市北区</td>
+                        <td>PHP, JavaScript, MySQL</td>
+                        <td>45-60万円</td>
+                        <td>観光情報システム開発</td>
+                        <td>観光業知識、地図連携経験</td>
+                        <td><a href="https://www.north-japan-tourism.co.jp" target="_blank">公式サイト</a></td>
+                        <td>H2345678901234</td>
+                    </tr>
+                    <tr>
+                        <td>東北アグリシステム株式会社</td>
+                        <td>農業/水産</td>
+                        <td>仙台市青葉区</td>
+                        <td>Java, Python, PostgreSQL</td>
+                        <td>45-60万円</td>
+                        <td>農業データ管理システム</td>
+                        <td>農業/水産業知識、IoT連携経験</td>
+                        <td><a href="https://www.tohoku-agri.co.jp" target="_blank">公式サイト</a></td>
+                        <td>H3456789012345</td>
+                    </tr>
+                    <tr>
+                        <td>北日本教育ソリューション株式会社</td>
+                        <td>教育</td>
+                        <td>札幌市白石区</td>
+                        <td>PHP, JavaScript, MySQL</td>
+                        <td>45-60万円</td>
+                        <td>学習管理システム開発</td>
+                        <td>教育系システム開発経験、UI/UX設計力</td>
+                        <td><a href="https://www.north-japan-education.co.jp" target="_blank">公式サイト</a></td>
+                        <td>H4567890123456</td>
+                    </tr>
+                    <tr>
+                        <td>東北エネルギーシステム株式会社</td>
+                        <td>エネルギー</td>
+                        <td>仙台市宮城野区</td>
+                        <td>Java, C#, Oracle</td>
+                        <td>50-65万円</td>
+                        <td>エネルギー管理システム</td>
+                        <td>エネルギー業界知識、データ分析経験</td>
+                        <td><a href="https://www.tohoku-energy.co.jp" target="_blank">公式サイト</a></td>
+                        <td>H5678901234567</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="skill-level-section">
+                <h3>スキルレベル別単価目安</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>レベル</th>
+                            <th>経験年数</th>
+                            <th>スキル要件</th>
+                            <th>市場需要</th>
+                            <th>平均単価</th>
+                            <th>案件特性</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>初級</td>
+                            <td>0～2年</td>
+                            <td>基本的なプログラミング言語の理解、開発環境の基本操作</td>
+                            <td>高</td>
+                            <td>30万円～40万円/月</td>
+                            <td>保守・運用中心、チーム開発での補助的役割</td>
+                        </tr>
+                        <tr>
+                            <td>中級</td>
+                            <td>3～5年</td>
+                            <td>1～2種類の言語・フレームワークに関する実務経験、要件に基づいて自力で実装可能</td>
+                            <td>高</td>
+                            <td>40万円～55万円/月</td>
+                            <td>機能実装中心、小規模チームでの中核メンバー</td>
+                        </tr>
+                        <tr>
+                            <td>上級</td>
+                            <td>5～8年</td>
+                            <td>複数の言語・フレームワークの深い知識と経験、システム設計可能</td>
+                            <td>中</td>
+                            <td>50万円～65万円/月</td>
+                            <td>中規模開発の中核メンバー、技術選定への関与</td>
+                        </tr>
+                        <tr>
+                            <td>エキスパート</td>
+                            <td>8年以上</td>
+                            <td>特定の技術領域における深い専門性、アーキテクチャ設計能力</td>
+                            <td>低～中</td>
+                            <td>60万円～85万円/月</td>
+                            <td>アーキテクト／テックリード、技術コンサルティング</td>
+                        </tr>
+                        <tr>
+                            <td>PM</td>
+                            <td>10年前後以上</td>
+                            <td>プロジェクト管理の知識と経験、リスク管理能力、チームマネジメント経験</td>
+                            <td>中</td>
+                            <td>75万円～100万円/月</td>
+                            <td>中～大規模プロジェクト管理、複数チームのマネジメント</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 市場動向 -->
+        <div id="trends" class="region-content">
+            <h2>市場動向と今後の予測</h2>
+            
+            <div class="trends-section">
+                <h3>全国共通の傾向</h3>
+                <ul>
+                    <li>リモートワークの定着により、地方在住エンジニアの活用機会増加</li>
+                    <li>クラウドネイティブ開発への移行加速</li>
+                    <li>AI/ML技術の活用拡大</li>
+                    <li>サイバーセキュリティ強化の需要増加</li>
+                    <li>DX推進による既存システムのモダナイゼーション需要拡大</li>
+                    <li>マイクロサービス化、API連携の需要増加</li>
+                </ul>
+            </div>
+
+            <div class="trends-section">
+                <h3>今後伸びる可能性の高い分野</h3>
+                <div class="trends-grid">
+                    <div class="trend-item">
+                        <h4>1. AI/ML活用システム開発</h4>
+                        <p>画像認識、自然言語処理、予測分析等<br>特に製造業、医療、金融分野での需要増</p>
+                    </div>
+                    <div class="trend-item">
+                        <h4>2. クラウドネイティブ開発</h4>
+                        <p>マイクロサービスアーキテクチャ<br>サーバーレスアプリケーション<br>コンテナ技術（Kubernetes）</p>
+                    </div>
+                    <div class="trend-item">
+                        <h4>3. IoT/エッジコンピューティング</h4>
+                        <p>製造業、農業、スマートシティ等での活用<br>センサーデータ収集・分析システム</p>
+                    </div>
+                    <div class="trend-item">
+                        <h4>4. 低コード/ノーコード開発</h4>
+                        <p>業務効率化ツール<br>内製化支援</p>
+                    </div>
+                    <div class="trend-item">
+                        <h4>5. セキュリティ関連</h4>
+                        <p>ゼロトラストセキュリティ<br>セキュアな認証システム<br>脆弱性診断・対策</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showRegion(regionId) {
+            // Hide all region contents
+            const regionContents = document.querySelectorAll('.region-content');
+            regionContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Show selected region content
+            document.getElementById(regionId).classList.add('active');
+            
+            // Update tab styling
+            const regionTabs = document.querySelectorAll('.region-tab');
+            regionTabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Find the clicked tab and make it active
+            const clickedTab = Array.from(regionTabs).find(tab => {
+                return tab.getAttribute('onclick').includes(regionId);
+            });
+            
+            if (clickedTab) {
+                clickedTab.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
